@@ -1,0 +1,28 @@
+{
+  "name": "respaldos-node",
+  "version": "1.0.0",
+  "description": "respaldos de las bd con node ",
+  "main": "recargasatc.js",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "dotenv": "^8.2.0",
+    "file-system": "^2.2.2",
+    "mysqldump": "^3.1.0",
+    "node-cron": "^2.0.3",
+    "node-schedule": "^1.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichelleArileni/respaldos-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichelleArileni/respaldos-node/issues"
+  },
+  "homepage": "https://github.com/MichelleArileni/respaldos-node#readme"
+}

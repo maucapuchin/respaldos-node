@@ -17,6 +17,7 @@
     "recargasatc": "nodemon recargasatc.js",
     "recargasbmc": "nodemon recargasbmc.js",
     "recargasgeneral": "nodemon recargasgeneral.js",
+    "respaldos": "nodemon respaldos.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

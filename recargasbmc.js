@@ -5,8 +5,8 @@ const moment = require('moment')
 const fs = require('fs')
 const fileName = `${'recargasbmc'}-${moment().format('YYYY-MM-DD')}.sql`
 const wstream = fs.createWriteStream(`./respaldos/recargasbmc/${fileName}`)
-
-var j = schedule.scheduleJob(' 10 10 * * * ', function(){
+console.log(wstream.path)
+var j = schedule.scheduleJob(' 27 10 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |

@@ -6,7 +6,7 @@ const fs = require('fs')
 const fileName = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
 const wstream = fs.createWriteStream(`./respaldos/recargasgeneral/${fileName}`)
 
- var j = schedule.scheduleJob(' 06 10 * * * ', function(){
+ var j = schedule.scheduleJob(' 15 10 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |
@@ -16,7 +16,7 @@ const wstream = fs.createWriteStream(`./respaldos/recargasgeneral/${fileName}`)
                             //   │ │ └─────────────── hour (0 - 23)
                             //   │ └──────────────────── minute (0 - 59)
                             //   └───────────────────────── second (0 - 59, OPTIONAL)
-/* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos */
+/* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos* */
     mysqlDump(
     {
         connection: {

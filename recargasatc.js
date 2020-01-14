@@ -7,7 +7,7 @@ const fileName = `${'recargasatc'}-${moment().format('YYYY-MM-DD')}.sql`
 const wstream = fs.createWriteStream(`./respaldos/recargasatc/${fileName}`)
 
 /* Esquema de automatizacion de la tarea con scheduleJob */
-var j = schedule.scheduleJob(' 15 10 * * * ', function(){
+var j = schedule.scheduleJob(' 20 10 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |

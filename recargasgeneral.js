@@ -1,8 +1,12 @@
 var mysqlDump = require('mysqldump');
 //npm install node-schedule --save
 var schedule = require('node-schedule');
+const moment = require('moment')
+const fs = require('fs')
+const fileName = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
+const wstream = fs.createWriteStream(`./respaldos/recargasgeneral/${fileName}`)
 
- var j = schedule.scheduleJob(' 05 10 * * * ', function(){
+ var j = schedule.scheduleJob(' 06 10 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |
@@ -22,7 +26,7 @@ var schedule = require('node-schedule');
             database: 'recargasgeneral',
         },
 
-        dumpToFile: './respaldos/recargasgeneral.sql',
+        dumpToFile: wstream.pat /* './respaldos/recargasgeneral.sql' */,
 
     },
 

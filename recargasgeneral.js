@@ -2,7 +2,7 @@ var mysqlDump = require('mysqldump');
 //npm install node-schedule --save
 var schedule = require('node-schedule');
 
- var j = schedule.scheduleJob(' 42 13 * * * ', function(){
+ var j = schedule.scheduleJob(' 05 10 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |

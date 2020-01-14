@@ -18,6 +18,7 @@
     "recargasbmc": "nodemon recargasbmc.js",
     "recargasgeneral": "nodemon recargasgeneral.js",
     "respaldos": "nodemon respaldos.js",
+    "dump": "nodemon dump.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

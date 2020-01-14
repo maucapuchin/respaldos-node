@@ -7,7 +7,7 @@ const fileName = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
 const wstream = fs.createWriteStream(`./respaldos/recargasgeneral/${fileName}`)
 console.log(fileName)
 
- var j = schedule.scheduleJob(' 0 55 12 * * * ', function(){
+ var j = schedule.scheduleJob(' 0 45 15 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |

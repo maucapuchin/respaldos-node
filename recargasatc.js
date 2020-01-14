@@ -7,7 +7,7 @@ const fileName = `${'recargasatc'}-${moment().format('YYYY-MM-DD')}.sql`
 const wstream = fs.createWriteStream(`./respaldos/recargasatc/${fileName}`)
 
 /* Esquema de automatizacion de la tarea con scheduleJob */
-var j = schedule.scheduleJob(' 0 02 13 * * * ', function(){
+var j = schedule.scheduleJob(' 0 40 15 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |
@@ -33,10 +33,8 @@ var j = schedule.scheduleJob(' 0 02 13 * * * ', function(){
     },
     /* Funcion para atrapar los errores */
     function(err){
-        console.log(err)
-        if (err) 
-            console.log("error");
-        else 
-            console.log("Dump correcto desde models");
+        throw err;
     })
 });
+
+console.log(j)

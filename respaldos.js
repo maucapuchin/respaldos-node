@@ -13,7 +13,7 @@ const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.s
 const wstreamGeneral = fs.createWriteStream(`./respaldos/recargasgeneral/${fileNameGeneral}`)
 
 function recargasatc(){
-var recargasatc = schedule.scheduleJob(' 33 11 * * * ', function(){
+var recargasatc = schedule.scheduleJob(' 0 33 11 * * * ', function(){
     //   * * * * * *
     //   ┬ ┬ ┬ ┬ ┬ ┬
     //   │ │ │ │ │ |
@@ -49,7 +49,7 @@ var recargasatc = schedule.scheduleJob(' 33 11 * * * ', function(){
 }
 
 function recargasbmc(){
-var recargasbmc = schedule.scheduleJob(' 27 11 * * * ', function(){
+var recargasbmc = schedule.scheduleJob(' 0 27 11 * * * ', function(){
     //   * * * * * *
     //   ┬ ┬ ┬ ┬ ┬ ┬
     //   │ │ │ │ │ |
@@ -78,8 +78,8 @@ var recargasbmc = schedule.scheduleJob(' 27 11 * * * ', function(){
   })
 }
 
-function recagasgeneral(){
-var recagasgeneral = schedule.scheduleJob(' 30 11 * * * ', function(){
+function recargasgeneral(){
+var recagasgeneral = schedule.scheduleJob(' 0 30 11 * * * ', function(){
     //   * * * * * *
     //   ┬ ┬ ┬ ┬ ┬ ┬
     //   │ │ │ │ │ |
@@ -112,6 +112,6 @@ var recagasgeneral = schedule.scheduleJob(' 30 11 * * * ', function(){
   })
 }
 
-recagasgeneral()
+recargasgeneral()
 recargasatc()
 recargasbmc()

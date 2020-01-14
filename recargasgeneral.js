@@ -16,7 +16,7 @@ const wstream = fs.createWriteStream(`./respaldos/recargasgeneral/${fileName}`)
                             //   │ │ └─────────────── hour (0 - 23)
                             //   │ └──────────────────── minute (0 - 59)
                             //   └───────────────────────── second (0 - 59, OPTIONAL)
-/* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos* */
+/* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos */
     mysqlDump(
     {
         connection: {

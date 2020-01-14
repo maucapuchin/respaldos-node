@@ -32,7 +32,7 @@ var recargasatc = schedule.scheduleJob(' 33 11 * * * ', function(){
         password: 'marquesada?466',
         database: 'recargasatc',
     },
-
+/* commit */
         /* Le pasamos a la funcion dump la ruta con el nombre del archivo ya armado */
         dumpToFile: /* './respaldos/recargasatc/recargasatce.sql' */wstreamATC.path,
 

@@ -3,17 +3,11 @@ var mysqlDump = require('mysqldump');
 var schedule = require('node-schedule');
 const moment = require('moment')
 const fs = require('fs')
-const fileNameATC = `${'recargasatc'}-${moment().format('YYYY-MM-DD')}.sql`
-const wstreamATC = fs.createWriteStream(`./respaldos/recargasatc/${fileNameATC}`)
-
-const fileNameBMC = `${'recargasbmc'}-${moment().format('YYYY-MM-DD')}.sql`
-const wstreamBMC = fs.createWriteStream(`./respaldos/recargasbmc/${fileNameBMC}`)
-
-const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
-const wstreamGeneral = fs.createWriteStream(`./respaldos/recargasgeneral/${fileNameGeneral}`)
 
 function recargasatc(){
-var recargasatc = schedule.scheduleJob(' 0 33 11 * * * ', function(){
+    schedule.scheduleJob(' 0 33 11 * * * ', function(){
+    const fileNameATC = `${'recargasatc'}-${moment().format('YYYY-MM-DD')}.sql`
+    const wstreamATC = fs.createWriteStream(`./respaldos/recargasatc/${fileNameATC}`)
     //   * * * * * *
     //   ┬ ┬ ┬ ┬ ┬ ┬
     //   │ │ │ │ │ |
@@ -49,7 +43,9 @@ var recargasatc = schedule.scheduleJob(' 0 33 11 * * * ', function(){
 }
 
 function recargasbmc(){
-var recargasbmc = schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    const fileNameBMC = `${'recargasbmc'}-${moment().format('YYYY-MM-DD')}.sql`
+    const wstreamBMC = fs.createWriteStream(`./respaldos/recargasbmc/${fileNameBMC}`)
     //   * * * * * *
     //   ┬ ┬ ┬ ┬ ┬ ┬
     //   │ │ │ │ │ |
@@ -79,7 +75,9 @@ var recargasbmc = schedule.scheduleJob(' 0 27 11 * * * ', function(){
 }
 
 function recargasgeneral(){
-var recagasgeneral = schedule.scheduleJob(' 0 30 11 * * * ', function(){
+    schedule.scheduleJob(' 0 30 11 * * * ', function(){
+    const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
+    const wstreamGeneral = fs.createWriteStream(`./respaldos/recargasgeneral/${fileNameGeneral}`)
     //   * * * * * *
     //   ┬ ┬ ┬ ┬ ┬ ┬
     //   │ │ │ │ │ |

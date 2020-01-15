@@ -3,10 +3,11 @@ var mysqlDump = require('mysqldump');
 var schedule = require('node-schedule');
 const moment = require('moment')
 const fs = require('fs')
-const fileName = `${'recargasbmc'}-${moment().format('YYYY-MM-DD')}.sql`
-const wstream = fs.createWriteStream(`./respaldos/recargasbmc/${fileName}`)
-console.log(wstream.path)
-var j = schedule.scheduleJob(' 0 44 15 * * ', function(){
+
+var j = schedule.scheduleJob(' 0 29 9 * * * ', function(){
+    const fileName = `${'recargasbmc'}-${moment().format('YYYY-MM-DD')}.sql`
+    const wstream = fs.createWriteStream(`./respaldos/recargasbmc/${fileName}`)
+    console.log(wstream.path)
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |

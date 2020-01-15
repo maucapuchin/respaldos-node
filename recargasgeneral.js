@@ -18,7 +18,7 @@ const fs = require('fs')
                             //   │ └──────────────────── minute (0 - 59)
                             //   └───────────────────────── second (0 - 59, OPTIONAL)
 /* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos */
-    mysqlDump(
+    mysqlDump (
     {
         connection: {
             host: '192.168.1.178',

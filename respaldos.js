@@ -465,7 +465,7 @@ function recargasTGCEL(){
         })
     })
 }
-
+/* listo */
 recargasgeneral()
 recargasatc()
 recargasbmc()

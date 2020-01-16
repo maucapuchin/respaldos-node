@@ -4,7 +4,7 @@ const moment = require('moment')
 const fs = require('fs')
 var CronJob = require('cron').CronJob
 
-
+/* comentario from master */
 /* ARREGLO DE BASES DE DATOS */
 const DBS = [
     'recargasatc',

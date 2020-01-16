@@ -5,7 +5,7 @@ const fs = require('fs')
 var CronJob = require('cron').CronJob
 
 
-/* ARREGLO DE BASES DE DATOS-- */
+/* ARREGLO DE BASES DE DATOS */
 const DBS = [
     'recargasatc',
     'recargasgeneral',

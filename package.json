@@ -5,6 +5,7 @@
   "main": "recargasatc.js",
   "dependencies": {
     "child_process": "^1.0.2",
+    "cron": "^1.7.2",
     "dotenv": "^8.2.0",
     "file-system": "^2.2.2",
     "mysqldump": "^3.1.0",
@@ -18,6 +19,8 @@
     "recargasbmc": "nodemon recargasbmc.js",
     "recargasgeneral": "nodemon recargasgeneral.js",
     "respaldos": "nodemon respaldos.js",
+    "funciones": "nodemon funcionesAsicronas.js",
+    "respaldos2": "nodemon respaldos2.js",
     "dump": "nodemon dump.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

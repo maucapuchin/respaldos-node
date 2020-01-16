@@ -4,10 +4,8 @@ var schedule = require('node-schedule');
 const moment = require('moment')
 const fs = require('fs')
 
-/* Funcion general ASYNC que encapsule las funciones independientes */
-//async function todosRespaldos() {
 function recargasatc(){
-    schedule.scheduleJob(' 0 33 11 * * * ', function(){
+    schedule.scheduleJob(' 0 4 4 * * * ', function(){
     
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
@@ -46,7 +44,7 @@ function recargasatc(){
 }
 
 function recargasbmc(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 5 4 * * * ', function(){
     
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
@@ -79,7 +77,7 @@ function recargasbmc(){
 }
 
 function recargasgeneral(){
-    schedule.scheduleJob(' 0 30 11 * * * ', function(){
+    schedule.scheduleJob(' 0 6 4 * * * ', function(){
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
                         //   │ │ │ │ │ |
@@ -90,6 +88,8 @@ function recargasgeneral(){
                         //   │ └──────────────────── minute (0 - 59)
                         //   └───────────────────────── second (0 - 59, OPTIONAL)
 /* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos */
+const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
+    const wstreamGeneral = fs.createWriteStream(`./respaldos/recargasgeneral/${fileNameGeneral}`)
     mysqlDump(
     {
         connection: {
@@ -113,7 +113,7 @@ function recargasgeneral(){
 }
 
 function marquesada(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 7 4 * * * ', function(){
                                         //   * * * * * *
                                         //   ┬ ┬ ┬ ┬ ┬ ┬
                                         //   │ │ │ │ │ |
@@ -145,7 +145,7 @@ function marquesada(){
 }
 
 function consignacion(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 8 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -177,7 +177,7 @@ function consignacion(){
 }
 
 function recargasEnlace(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 9 4 * * * ', function(){
                             //   * * * * * *
                             //   ┬ ┬ ┬ ┬ ┬ ┬
                             //   │ │ │ │ │ |
@@ -211,7 +211,7 @@ function recargasEnlace(){
 }
 
 function recargasIdea(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 10 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -243,7 +243,7 @@ function recargasIdea(){
 }  
 
 function recargasSierra(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 11 4 * * * ', function(){
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
                         //   │ │ │ │ │ |
@@ -275,7 +275,7 @@ function recargasSierra(){
 }
 
 function recargasMacrocel(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 13 4 * * * ', function(){
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
                         //   │ │ │ │ │ |
@@ -307,7 +307,7 @@ function recargasMacrocel(){
 }
 
 function recargasOrticel(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 14 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -339,7 +339,7 @@ function recargasOrticel(){
 }
 
 function recargasPremium(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 15 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -371,7 +371,7 @@ function recargasPremium(){
 }
 
 function recargasProcel(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 16 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -403,7 +403,7 @@ function recargasProcel(){
 }
 
 function recargasTCC(){
-    schedule.scheduleJob(' 0 27 11 * * * ', function(){
+    schedule.scheduleJob(' 0 17 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -435,7 +435,7 @@ function recargasTCC(){
 }
 
 function recargasTGCEL(){
-    schedule.scheduleJob(' 27 11 * * * ', function(){
+    schedule.scheduleJob(' 18 4 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |

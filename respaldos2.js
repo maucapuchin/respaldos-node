@@ -10,10 +10,10 @@ var CronJob = require('cron').CronJob
 
 /* AREGLO DE BASES DE DATOS */
 const DBS = [
-    'recargasatc',
-  /*'recargasbmc',
-    'recargasgeneral',
-    'marquesada',
+    //'recargasatc',
+    //'recargasgeneral',
+    'marquesadabd',
+    /*'recargasbmc',
     'consignacion',
     'recargasEnlace',
     'recargasIdea',
@@ -26,10 +26,17 @@ const DBS = [
     'recargasTGCEL' */
 ]
 function recargasatc(){ 
- 
-    for (i in DBS) {
-            const fileName = `${DBS[i]}-${moment().format('YYYY-MM-DD')}.sql`
-            const wstream = fs.createWriteStream(`./respaldos/${DBS[i]}/${fileName}`)
+    
+    for (i = 0; i < DBS.length; i++) {
+        let arreglo = DBS[i];
+        //console.log(arreglo)
+        
+        /* Funcion para atrapar los errores */
+        let long =  DBS.length
+        console.log(long)
+        const fileName = `${DBS[i]}-${moment().format('YYYY-MM-DD')}.sql`
+        const wstream = fs.createWriteStream(`./respaldos/${DBS[i]}/${fileName}`)
+        
         mysqlDump({
             connection: {
             host: '192.168.1.178',
@@ -37,25 +44,25 @@ function recargasatc(){
             password: 'marquesada?466',
             database: DBS[i],
         },
+    
             /* Le pasamos a la funcion dump la ruta con el nombre del archivo ya armado */
             dumpToFile: wstream.path,
-    
+            
         },
-        /* Funcion para atrapar los errores */
+    
             function(err){
                 console.log(error)
                 if (err) { console.log("error") }
                 else { console.log("Dump correcto desde models") }
             })
-        }
-   
-}  
-
-function cron(){
-    new CronJob('00 20 10 * * *', function() {
-        console.log("hola")
-    })
+            if(i == long){
+                exit
+            }
+        
+        
+    }
 }
 
-  cron() 
-//recargasatc()
+
+
+recargasatc()

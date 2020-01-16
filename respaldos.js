@@ -5,7 +5,7 @@ const moment = require('moment')
 const fs = require('fs')
 
 function recargasatc(){
-    schedule.scheduleJob(' 0 4 4 * * * ', function(){
+    schedule.scheduleJob(' 0 53 9 * * * ', function(){
     
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
@@ -44,7 +44,7 @@ function recargasatc(){
 }
 
 function recargasbmc(){
-    schedule.scheduleJob(' 0 5 4 * * * ', function(){
+    schedule.scheduleJob(' 0 53 9 * * * ', function(){
     
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
@@ -77,7 +77,7 @@ function recargasbmc(){
 }
 
 function recargasgeneral(){
-    schedule.scheduleJob(' 0 6 4 * * * ', function(){
+    schedule.scheduleJob(' 0 54 9 * * * ', function(){
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
                         //   │ │ │ │ │ |
@@ -87,6 +87,9 @@ function recargasgeneral(){
                         //   │ │ └─────────────── hour (0 - 23)
                         //   │ └──────────────────── minute (0 - 59)
                         //   └───────────────────────── second (0 - 59, OPTIONAL)
+
+    const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
+    const wstreamGeneral = fs.createWriteStream(`./respaldos/recargasgeneral/${fileNameGeneral}`)
 /* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos */
 const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.sql`
     const wstreamGeneral = fs.createWriteStream(`./respaldos/recargasgeneral/${fileNameGeneral}`)
@@ -113,7 +116,7 @@ const fileNameGeneral = `${'recargasgeneral'}-${moment().format('YYYY-MM-DD')}.s
 }
 
 function marquesada(){
-    schedule.scheduleJob(' 0 7 4 * * * ', function(){
+    schedule.scheduleJob(' 0 54 9 * * * ', function(){
                                         //   * * * * * *
                                         //   ┬ ┬ ┬ ┬ ┬ ┬
                                         //   │ │ │ │ │ |
@@ -145,7 +148,7 @@ function marquesada(){
 }
 
 function consignacion(){
-    schedule.scheduleJob(' 0 8 4 * * * ', function(){
+    schedule.scheduleJob(' 0 54 9 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -177,16 +180,16 @@ function consignacion(){
 }
 
 function recargasEnlace(){
-    schedule.scheduleJob(' 0 9 4 * * * ', function(){
-                            //   * * * * * *
-                            //   ┬ ┬ ┬ ┬ ┬ ┬
-                            //   │ │ │ │ │ |
-                            //   │ │ │ │ │ └ day of week (0 - 7) (0 or 7 is Sun)
-                            //   │ │ │ │ └───── month (1 - 12)
-                            //   │ │ │ └────────── day of month (1 - 31)
-                            //   │ │ └─────────────── hour (0 - 23)
-                            //   │ └──────────────────── minute (0 - 59)
-                            //   └───────────────────────── second (0 - 59, OPTIONAL)
+    schedule.scheduleJob(' 0 56 9 * * * ', function(){
+                        //   * * * * * *
+                        //   ┬ ┬ ┬ ┬ ┬ ┬
+                        //   │ │ │ │ │ |
+                        //   │ │ │ │ │ └ day of week (0 - 7) (0 or 7 is Sun)
+                        //   │ │ │ │ └───── month (1 - 12)
+                        //   │ │ │ └────────── day of month (1 - 31)
+                        //   │ │ └─────────────── hour (0 - 23)
+                        //   │ └──────────────────── minute (0 - 59)
+                        //   └───────────────────────── second (0 - 59, OPTIONAL)
     /* funcion a partir de la cual obtendremos los respaldos pasada la conexion y demas datos */
     const fileNameEnlace = `${'recargasenlace'}-${moment().format('YYYY-MM-DD')}.sql`
     const wstreamEnlace = fs.createWriteStream(`./respaldos/recargasenlace/${fileNameEnlace}`)
@@ -211,7 +214,7 @@ function recargasEnlace(){
 }
 
 function recargasIdea(){
-    schedule.scheduleJob(' 0 10 4 * * * ', function(){
+    schedule.scheduleJob(' 0 57 9 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -243,7 +246,7 @@ function recargasIdea(){
 }  
 
 function recargasSierra(){
-    schedule.scheduleJob(' 0 11 4 * * * ', function(){
+    schedule.scheduleJob(' 0 58 9 * * * ', function(){
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
                         //   │ │ │ │ │ |
@@ -275,7 +278,7 @@ function recargasSierra(){
 }
 
 function recargasMacrocel(){
-    schedule.scheduleJob(' 0 13 4 * * * ', function(){
+    schedule.scheduleJob(' 0 59 9 * * * ', function(){
                         //   * * * * * *
                         //   ┬ ┬ ┬ ┬ ┬ ┬
                         //   │ │ │ │ │ |
@@ -307,7 +310,7 @@ function recargasMacrocel(){
 }
 
 function recargasOrticel(){
-    schedule.scheduleJob(' 0 14 4 * * * ', function(){
+    schedule.scheduleJob(' 0 0 10 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -339,7 +342,7 @@ function recargasOrticel(){
 }
 
 function recargasPremium(){
-    schedule.scheduleJob(' 0 15 4 * * * ', function(){
+    schedule.scheduleJob(' 0 1 10 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -371,7 +374,7 @@ function recargasPremium(){
 }
 
 function recargasProcel(){
-    schedule.scheduleJob(' 0 16 4 * * * ', function(){
+    schedule.scheduleJob(' 0 2 10 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -403,7 +406,7 @@ function recargasProcel(){
 }
 
 function recargasTCC(){
-    schedule.scheduleJob(' 0 17 4 * * * ', function(){
+    schedule.scheduleJob(' 0 3 10 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
@@ -435,7 +438,7 @@ function recargasTCC(){
 }
 
 function recargasTGCEL(){
-    schedule.scheduleJob(' 18 4 * * * ', function(){
+    schedule.scheduleJob('0 4 10 * * * ', function(){
         //   * * * * * *
         //   ┬ ┬ ┬ ┬ ┬ ┬
         //   │ │ │ │ │ |
